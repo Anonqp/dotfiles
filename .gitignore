@@ -1,0 +1,14 @@
+.DS_Store
+Thumbs.db
+Desktop.ini
+.bash_history
+.zsh_history
+*.log
+*.swp
+*~
+.netrwhist
+.ssh/
+.gnupg/
+.env
+.npmrc
+_netrc
