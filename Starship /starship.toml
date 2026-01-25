@@ -1,0 +1,120 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+command_timeout = 1000
+scan_timeout = 30
+
+format = """
+[╭─](fg:#ea6962)\
+[ $username](bg:#ea6962 fg:#282828)\
+[](bg:#e78a4e fg:#ea6962)\
+[ $os](bg:#e78a4e fg:#282828)\
+[](bg:#504945 fg:#e78a4e)\
+$directory\
+[](fg:#504945 bg:#3c3836)\
+$git_branch\
+$git_status\
+[](fg:#3c3836 bg:#282828)\
+$c\
+$rust\
+$golang\
+$nodejs\
+$php\
+$java\
+$kotlin\
+$haskell\
+$python\
+$lua\
+[](fg:#282828 bg:#1d2021)\
+$time\
+[ ](fg:#1d2021)\
+$cmd_duration\
+\n[╰─](fg:#ea6962)$character"""
+
+[username]
+show_always = true
+style_user = "bg:#ea6962 fg:#282828" 
+style_root = "bg:#ea6962 fg:#282828"
+format = '[$user ]($style)'
+
+[os]
+disabled = false
+style = "bg:#e78a4e fg:#282828"
+format = '[$symbol]($style)'
+
+[os.symbols]
+Windows = " "
+Ubuntu = " "
+Debian = " "
+Raspbian = " "
+Mint = " "
+Macos = " "
+Linux = " "
+Unknown = " "
+
+[directory]
+style = "fg:#ebdbb2 bg:#504945"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+read_only = " "
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+"Desktop" = " "
+
+[git_branch]
+symbol = ""
+style = "bg:#3c3836"
+format = '[[ $symbol $branch ](fg:#a9b665 bg:#3c3836)]($style)'
+
+[git_status]
+style = "bg:#3c3836"
+format = '[[($all_status$ahead_behind )](fg:#ebdbb2 bg:#3c3836)]($style)'
+
+[nodejs]
+symbol = ""
+style = "bg:#282828"
+format = '[[ $symbol ($version) ](fg:#d3869b bg:#282828)]($style)'
+
+[rust]
+symbol = ""
+style = "bg:#282828"
+format = '[[ $symbol ($version) ](fg:#e78a4e bg:#282828)]($style)'
+
+[golang]
+symbol = ""
+style = "bg:#282828"
+format = '[[ $symbol ($version) ](fg:#89b482 bg:#282828)]($style)'
+
+[php]
+symbol = ""
+style = "bg:#282828"
+format = '[[ $symbol ($version) ](fg:#89b482 bg:#282828)]($style)'
+
+[python]
+symbol = ""
+style = "bg:#282828"
+format = '[[ $symbol ($version) ](fg:#d8a657 bg:#282828)]($style)'
+
+[lua]
+symbol = ""
+style = "bg:#282828"
+format = '[[ $symbol ($version) ](fg:#89b482 bg:#282828)]($style)'
+
+[time]
+disabled = false
+time_format = "%R" 
+style = "bg:#1d2021"
+format = '[[  $time ](fg:#a89984 bg:#1d2021)]($style)'
+
+[cmd_duration]
+min_time = 2000
+format = "[$duration ](bold yellow)"
+
+[character]
+success_symbol = "[λ](bold #ea6962)"
+error_symbol = "[λ](bold #d8a657)"
+vimcmd_symbol = "[Ω](bold #a9b665)"  # Omega for VIM mode
