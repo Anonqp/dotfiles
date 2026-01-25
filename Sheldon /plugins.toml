@@ -1,0 +1,33 @@
+shell = "zsh"
+
+[templates]
+defer = "{% for file in files %}zsh-defer source \"{{ file }}\"\n{% endfor %}"
+
+[plugins.starship]
+inline = 'eval "$(starship init zsh)"'
+
+[plugins.zsh-transient-prompt]
+github = "olets/zsh-transient-prompt"
+apply = ["source"]
+
+
+[plugins.zsh-defer]
+github = "romkatv/zsh-defer"
+
+[plugins.compfix]
+github = "ohmyzsh/ohmyzsh"
+dir = "lib"
+use = ["completion.zsh", "key-bindings.zsh", "directories.zsh", "history.zsh"]
+
+[plugins.zsh-autosuggestions]
+github = "zsh-users/zsh-autosuggestions"
+use = ["{{ name }}.zsh"]
+
+[plugins.zsh-syntax-highlighting]
+github = "zsh-users/zsh-syntax-highlighting"
+apply = ["defer"] # Now this will work!
+
+# --- 6. Completions ---
+[plugins.zsh-completions]
+github = "zsh-users/zsh-completions"
+apply = ["defer"]
