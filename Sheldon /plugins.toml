@@ -25,9 +25,8 @@ use = ["{{ name }}.zsh"]
 
 [plugins.zsh-syntax-highlighting]
 github = "zsh-users/zsh-syntax-highlighting"
-apply = ["defer"] # Now this will work!
+apply = ["defer"]
 
-# --- 6. Completions ---
 [plugins.zsh-completions]
 github = "zsh-users/zsh-completions"
 apply = ["defer"]
