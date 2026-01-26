@@ -1,103 +1,71 @@
 "$schema" = "https://yazi-rs.github.io/schemas/theme.json"
 
-# ==================================================================================
-#  THE "ULTRAKILL" THEME - CORRECTED SYNTAX
-#  Blood Red & Void Black
-# ==================================================================================
-
-# : Flavor {{{
 [flavor]
 dark  = "gruvbox-dark"
-# : }}}
 
-# : App {{{
 [app]
 overall = {}
-# : }}}
 
-# : Manager {{{
 [mgr]
 cwd = { fg = "red", bold = true }
 
-# Find
 find_keyword  = { fg = "yellow", bold = true, italic = true, underline = true }
 find_position = { fg = "red", bold = true, italic = true }
 
-# Symlink
 symlink_target = { fg = "red", italic = true }
 
-# Marker
 marker_copied   = { fg = "yellow", bg = "yellow" }
 marker_cut      = { fg = "red",    bg = "red" }
 marker_marked   = { fg = "red",    bg = "red" }
 marker_selected = { fg = "red",    bg = "red" }
 
-# Count
 count_copied   = { fg = "black", bg = "yellow" }
 count_cut      = { fg = "black", bg = "red" }
 count_selected = { fg = "black", bg = "red" }
 
-# Border
 border_symbol = "│"
 border_style  = { fg = "red" }
 
-# Highlighting
 syntect_theme = ""
-# : }}}
 
-# : Tabs {{{
 [tabs]
 active   = { fg = "black", bg = "red", bold = true }
 inactive = { fg = "white", bg = "black" }
 
-# Separator
 sep_inner = { open = "", close = "" }
 sep_outer = { open = "", close = "" }
-# : }}}
 
-# : Mode {{{
 [mode]
-# Normal Mode (Red)
 normal_main = { fg = "black", bg = "red", bold = true }
 normal_alt  = { fg = "red", bg = "black" }
 
-# Select Mode (Yellow)
 select_main = { fg = "black", bg = "yellow", bold = true }
 select_alt  = { fg = "yellow", bg = "black" }
 
-# Unset Mode (White/Grey)
 unset_main = { fg = "black", bg = "white", bold = true }
 unset_alt  = { fg = "white", bg = "black" }
-# : }}}
 
-# : Indicator of hovered file {{{
 [indicator]
 parent  = { reversed = true }
 current = { reversed = true }
 preview = { underline = true }
 padding = { open = "", close = "" }
-# : }}}
 
-# : Status bar {{{
 [status]
 overall   = {}
 sep_left  = { open = "", close = "" }
 sep_right = { open = "", close = "" }
 
-# Permissions
 perm_sep   = { fg = "darkgray" }
 perm_type  = { fg = "red" }
 perm_read  = { fg = "yellow" }
 perm_write = { fg = "red" }
 perm_exec  = { fg = "green" }
 
-# Progress
 progress_label  = { bold = true }
 progress_normal = { fg = "red", bg = "black" }
 progress_error  = { fg = "red", bg = "black" }
-# : }}}
 
-# : Which {{{
 [which]
 cols            = 3
 mask            = { bg = "black" }
@@ -106,9 +74,7 @@ rest            = { fg = "darkgray" }
 desc            = { fg = "white" }
 separator       = "  "
 separator_style = { fg = "darkgray" }
-# : }}}
 
-# : Confirmation {{{
 [confirm]
 border     = { fg = "red" }
 title      = { fg = "red" }
@@ -117,17 +83,13 @@ list       = {}
 btn_yes    = { reversed = true }
 btn_no     = {}
 btn_labels = [ "  [Y]es  ", "  (N)o  " ]
-# : }}}
 
-# : Spotter {{{
 [spot]
 border = { fg = "red" }
 title  = { fg = "red" }
 tbl_col  = { fg = "red" }
 tbl_cell = { fg = "yellow", reversed = true }
-# : }}}
 
-# : Notification {{{
 [notify]
 title_info  = { fg = "green" }
 title_warn  = { fg = "yellow" }
@@ -136,24 +98,18 @@ title_error = { fg = "red" }
 icon_info  = ""
 icon_warn  = ""
 icon_error = ""
-# : }}}
 
-# : Picker {{{
 [pick]
 border   = { fg = "red" }
 active   = { fg = "red", bold = true }
 inactive = {}
-# : }}}
 
-# : Input {{{
 [input]
 border   = { fg = "red" }
 title    = {}
 value    = {}
 selected = { reversed = true }
-# : }}}
 
-# : Completion {{{
 [cmp]
 border   = { fg = "red" }
 active   = { reversed = true }
@@ -161,43 +117,32 @@ inactive = {}
 icon_file    = ""
 icon_folder  = ""
 icon_command = ""
-# : }}}
 
-# : Task manager {{{
 [tasks]
 border  = { fg = "red" }
 title   = {}
 hovered = { fg = "red", bold = true }
-# : }}}
 
-# : Help menu {{{
 [help]
 on      = { fg = "red" }
 run     = { fg = "yellow" }
 desc    = {}
 hovered = { reversed = true, bold = true }
 footer  = { fg = "black", bg = "white" }
-# : }}}
 
 [filetype]
 rules = [
-	# Images & Video (Yellow/Gold)
 	{ mime = "image/*", fg = "#f9d72c" },
 	{ mime = "{audio,video}/*", fg = "#f9d72c", bold = true },
 
-	# Archives (Red)
 	{ mime = "application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", fg = "#ff4c1f" },
 
-	# Documents (Cyan/Blue)
 	{ mime = "application/{pdf,doc,rtf}", fg = "#51a0cf" },
 
-    # Executables (Green)
     { url = "*", is = "exec", fg = "#20c2e3", bold = true },
 
-	# Fallback
 	{ url = "*/", fg = "#ffffff" }
 ]
-# : }}}
 
 [icon]
 globs = []
@@ -863,14 +808,8 @@ exts = [
 	{ name = "🔥", text = "", fg = "#ff4c1f" },
 ]
 conds = [
-	# Special files
 	{ if = "orphan", text = "", fg = "#ffffff" },
 	{ if = "link", text = "", fg = "#9e9e9e" },
-    # ... (keep the other special ones if you have them)
-
-	# Fallback (CHANGE THIS PART)
-	# OLD: { if = "dir", text = "", fg = "#03a9f4" }, 
-	# NEW (Blood Red):
 	{ if = "dir", text = "", fg = "#ff4c1f" },
 	
 	{ if = "exec", text = "", fg = "#20c2e3" },
