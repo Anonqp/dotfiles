@@ -1,46 +1,56 @@
 local wezterm = require("wezterm")
 local act = wezterm.action
 
-local config = {}
-if wezterm.config_builder then config = wezterm.config_builder() end
+local config = wezterm.config_builder()
 
 -- =========================================================
 -- THEME & APPEARANCE
 -- =========================================================
+
 config.color_scheme = 'Gruvbox Material (Gogh)'
 config.win32_system_backdrop = "Acrylic"
-config.window_background_opacity = 0.60
-config.window_decorations = "RESIZE" 
-config.window_close_confirmation = "AlwaysPrompt"
+config.window_background_opacity = 0.6
+config.window_decorations = "NONE | RESIZE"
 config.front_end = "WebGpu"
 config.freetype_load_target = "Light"
 config.freetype_render_target = "Light"
+config.max_fps = 144
+config.term = "xterm-256color"
 config.enable_tab_bar = false
+config.hide_tab_bar_if_only_one_tab = true
+config.use_fancy_tab_bar = false
+config.prefer_egl = true
+config.cell_width = 0.9
+config.initial_cols = 80
 
 config.default_cursor_style = "BlinkingBlock"
-
-config.cursor_blink_rate = 600
+config.animation_fps = 1
+config.cursor_blink_rate = 500
 
 config.colors = {
-  background = "#000000",
+	background = "#000000",
 }
 
-
+config.window_frame = {
+	font = wezterm.font({ family = "Iosevka Custom", weight = "Regular" }),
+	active_titlebar_bg = "#0c0b0f",
+	-- active_titlebar_bg = "#181616",
+}
 
 -- =========================================================
 -- FONTS & TYPOGRAPHY
 -- =========================================================
 config.font = wezterm.font_with_fallback({
     { 
-        family = "JetBrains Mono", 
-        weight = "Medium",
+        family = "Iosevka Custom", 
+        stretch = "Expanded",
+        weight = "Regular",
         harfbuzz_features = { 
             "calt=1", -- Ligatures
             "clig=1", -- Contextual Ligatures
             "liga=1", -- Standard Ligatures
-            "zero",   -- Slashed Zero (Crucial for coding!)
-            "cv02",   -- Alternate 'g' (optional, looks cleaner)
-            -- Keep your specific ones if you know what they do:
+            "zero",   -- Slashed Zero
+            "cv02",   -- Alternate 'g'
             "ss01", "cv24", "cv31" 
         },
     },
@@ -48,7 +58,6 @@ config.font = wezterm.font_with_fallback({
 })
 
 config.font_size = 11.0
-config.line_height = 1.15
 
 
 -- =========================================================
@@ -61,10 +70,10 @@ config.default_domain = "WSL:Arch"
 
 -- Padding
 config.window_padding = {
-  left = 10,
-  right = 10,
-  top = 10,
-  bottom = 0,
+	left = 0,
+	right = 0,
+	top = 0,
+	bottom = 0,
 }
 
 -- =========================================================
