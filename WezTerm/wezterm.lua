@@ -4,10 +4,10 @@ local act = wezterm.action
 local config = wezterm.config_builder()
 
 config.color_scheme = "Gruvbox Material (Gogh)"
-config.window_background_opacity = 0.9
+config.window_background_opacity = 0.6
 config.win32_system_backdrop = "Acrylic"
 config.window_decorations = "NONE | RESIZE"
-config.front_end = "WebGpu"
+config.front_end = "OpenGL"
 config.freetype_load_target = "Light"
 config.freetype_render_target = "Light"
 config.max_fps = 144
@@ -28,7 +28,7 @@ config.colors = {
 }
 
 config.window_frame = {
-	font = wezterm.font({ family = "Iosevka Custom", weight = "Regular" }),
+	font = wezterm.font({ family = "JetBrains Mono", weight = "Regular" }),
 	}
 
 config.font = wezterm.font_with_fallback({
