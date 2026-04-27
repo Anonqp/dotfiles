@@ -958,3 +958,5 @@ zoxide 0.9.9-2
 zsh 5.9-6
 zstd 1.5.7-3
 zziplib 0.13.80-1
+
+Ok, so, Arch now, Nix-ify as I get closer to switching to my main machine(s), then go full NixOS then, in comfort, and with the proper time to build and tailor it properly while having a proper Arch machine to use in the process, and then have my NixOS setup that I then maintain over the course of my entire Linux usage (unless another distro somehow becomes more power user?), and be happy.
